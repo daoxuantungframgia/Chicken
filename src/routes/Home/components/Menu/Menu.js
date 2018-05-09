@@ -9,13 +9,13 @@ const Menu = () => (
         <a> Giới thiệu về chúng tôi </a>
       </li>
       <li className={classes.menuItem}>
-        <a> Các sản phẩm </a>
-      </li>
-      <li className={classes.menuItem}>
-        <a> Hướng dẫn mua hàng </a>
+        <a> Các danh mục sản phẩm </a>
       </li>
       <li className={classes.menuItem}>
         <a> Sản phầm bán chạy </a>
+      </li>
+      <li className={classes.menuItem}>
+        <a> Hướng dẫn mua hàng </a>
       </li>
     </ul>
   </div>
