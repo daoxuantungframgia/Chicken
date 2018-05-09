@@ -1,0 +1,54 @@
+.wrapper {
+  .info {
+    .imageWrapper {
+      img {
+        max-width: 100%;
+      }
+    }
+    .name {
+      font-size: 22px;
+    }
+  
+    .amount {
+      padding: 15px;
+      background-color: #eaeaea;
+      .oldAmount {
+        float: right;
+      }
+    }
+  
+    .titleDescription {
+      font-weight: bold;
+      border-bottom: 1px solid #dddddd;
+      margin-top: 15px;
+    }
+
+    .inputWrapper {
+      display: inline-block;
+      margin-right: 20px;
+      vertical-align: bottom;
+    }
+
+    .addToBasket {
+      display: inline-block;
+      color: #ffffff;
+      background-color: #33a948;
+      border: none;
+      padding: 9px 40px;
+      border-radius: 4px;
+      box-shadow: -4px -4px 20px 0 rgba(51,169,72,.2), 4px 4px 20px 0 rgba(51,169,72,.3);
+    }
+
+    .numberProduct {
+      margin-top: 10px;
+    }
+  }
+
+  .detail {
+    padding-top: 40px;
+  }
+
+  .relativeProducts {
+    padding-top: 40px;
+  }
+}

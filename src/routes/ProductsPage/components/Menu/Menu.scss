@@ -1,0 +1,43 @@
+.menuWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  .menu {
+    list-style-type: none;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: transparent;
+    max-width: 1024px;
+    margin: 0 auto;
+    .menuItem {
+      a {
+        text-decoration: none;
+        cursor: pointer;
+        color: #525252;
+      }
+    }
+
+    .active {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #33a948;
+        bottom: -5px;
+      }
+    }
+  }
+}
+
+.whiteBg {
+  background-color: #ffffff;
+}

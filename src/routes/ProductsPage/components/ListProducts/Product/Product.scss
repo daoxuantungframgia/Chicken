@@ -1,0 +1,51 @@
+.wrapper {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.07);
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  text-align: center;
+  img {
+    max-width: 100%;
+  }
+
+  .discount {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: url(../../../../../assets/deal-badge@2x.png);
+    background-size: contain;
+    padding: 0;
+    line-height: 40px;
+    font-weight: 300;
+    font-style: italic;
+    z-index: 1;
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+  }
+}
+
+.productInfo {
+  padding: 15px;
+  .newAmount {
+    font-size: 15px;
+    color: #242424;
+    font-weight: 500;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .oldAmount {
+    font-size: 11px;
+    color: #a2a2a2;
+    text-decoration: line-through;
+    text-align: left;
+    font-weight: 300;
+    margin-left: 8px;
+  }
+}
