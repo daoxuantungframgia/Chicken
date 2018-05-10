@@ -58,9 +58,12 @@ const Menu = ({ scrollTo, active }) => (
         <a> Rượu trứng gà so </a>
       </li>
       <div className={classes.right}>
-        <span className={classNames(classes.basketIcon, 'glyphicon glyphicon-shopping-cart')}
-          onClick={navigateToBasket}
-        />
+        <div className={classes.basketWrapper}>
+          <span className={classNames(classes.basketIcon, 'glyphicon glyphicon-shopping-cart')}
+            onClick={navigateToBasket}
+          />
+          <span className={classes.numberProduct}> 6 </span>
+        </div>
         <button className={classes.btnLogin} > Đăng Nhập </button>
       </div>
     </ul>

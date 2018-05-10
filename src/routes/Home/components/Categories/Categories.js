@@ -5,7 +5,7 @@ import classes from './Categories.scss'
 
 const Categories = () => (
   <div className={classes.categoriesContainer}>
-    <h2> Các Danh Mục Sản Phẩm </h2>
+    <h2 className={classes.title}> Các Danh Mục Sản Phẩm </h2>
     <div className={classes.categories}>
       <div className='row'>
         { categories.map((category) => (

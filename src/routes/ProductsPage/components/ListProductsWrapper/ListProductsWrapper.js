@@ -5,7 +5,7 @@ import classes from './ListProductsWrapper.scss'
 
 const ListProductWrapper = ({ title, products }) => (
   <div className={classes.wrapper}>
-    <h2> {title} </h2>
+    <h2 className={classes.title}> {title} </h2>
     <ListProducts products={products} />
   </div>
 )

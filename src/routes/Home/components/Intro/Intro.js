@@ -4,7 +4,7 @@ import classes from './Intro.scss'
 
 const Intro = () => (
   <div className={classes.container}>
-    <h2> Giới thiệu về chúng tôi </h2>
+    <h2 className={classes.title}> Giới thiệu về chúng tôi </h2>
     <div className='row'>
       <div className='col-xs-12 col-md-6'>
         <div className={classes.banner}>
