@@ -34,7 +34,7 @@ const StepsBuy = () => (
               Xác nhận đơn hàng qua điện thoại
             </p>
             <p className={classes.note}> Với đội ngũ nhân viên nhiệt tình thân thiên, bạn sẽ nhận được cuộc
-            gọi trong thời gian sớm nhất, với chất lượng hài lòng nhất </p>
+            gọi trong thời gian sớm nhất </p>
           </div>
         </div>
         <div className='col-md-3'>

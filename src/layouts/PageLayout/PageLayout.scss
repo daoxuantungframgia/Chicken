@@ -9,6 +9,8 @@
 
 .container {
   min-height: 100%;
-  max-width: 1024px;
-  margin: 0 auto;
+  .content {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
 }
