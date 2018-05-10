@@ -1,0 +1,36 @@
+.title {
+  margin-bottom: 20px;
+}
+
+.step {
+  text-align: center;
+  .icon {
+    img {
+      width: 90px;
+    }
+  }
+  .stepText {
+    font-weight: bold;
+    color: #91c751;
+    font-size: 22px;
+    margin-top: 20px;
+  }
+
+  .step2Text {
+    color: #0251a2;
+  }
+  .step3Text {
+    color: #fd9733;
+  }
+  .step4Text {
+    color: #bd9267;
+  }
+  .description {
+    font-size: 18px;
+    color: #525252;
+  }
+  .note {
+    font-size: 14px;
+    font-style: italic;
+  }
+}

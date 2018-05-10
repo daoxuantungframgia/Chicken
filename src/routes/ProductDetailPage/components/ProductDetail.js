@@ -5,6 +5,7 @@ import ListProductsWrapper from '../../ProductsPage/components/ListProductsWrapp
 import InputNumber from '../../BasketPage/components/InputNumber'
 import { productDetail as product, data1 } from '../data'
 import { navigateTo } from '../../../utils/routing'
+import Menu from '../../ProductsPage/components/Menu'
 
 const navigateToBasket = () => {
   navigateTo('/basket')
@@ -12,6 +13,7 @@ const navigateToBasket = () => {
 
 const ProductDetail = () => (
   <div className={classes.wrapper}>
+    <Menu />
     <div className={classes.info}>
       <div className='row'>
         <div className='col-xs-12 col-md-4'>
