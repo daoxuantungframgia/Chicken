@@ -21,6 +21,7 @@ const Product = ({ product }) => (
         <span className={classes.oldAmount}> {product.oldAmount} </span>
       </div>
     </div>
+    <div className={classes.background} />
   </div>
 )
 

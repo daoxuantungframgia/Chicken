@@ -19,9 +19,41 @@
   }
 }
 .title {
-  background-color: #246700;
-  color: #ffffff;
+  color: #246700;
   padding: 10px 15px;
   font-size: 18px;
   border-radius: 4px;
+  font-family: UTMEdwardian;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.name {
+  font-size: 40px;
+  color: #4a5462;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.iconIntroWrapper {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.titleText {
+  text-align: center;
+  font-family: UTMEdwardian;
+  font-size: 50px;
+  span {
+    color: #246700;
+  }
+}
+
+.description {
+  text-align: center;
+  line-height: 30px;
+  padding: 0 15px !important;
+  margin-bottom: 21px !important;
+  font-size: 15px;
 }

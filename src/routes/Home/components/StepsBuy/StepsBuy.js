@@ -5,10 +5,16 @@ import OrderIcon from '../../../../assets/order.png'
 import CallIcon from '../../../../assets/call.png'
 import DeliverIcon from '../../../../assets/deliver.png'
 import ReceiveIcon from '../../../../assets/receive-and-payment.png'
+import iconIntro from '../../../../assets/icon-gioithieu.png'
 
 const StepsBuy = () => (
   <div className={classes.stepsBuyWrapper}>
-    <h2 className={classes.title}> Mua Hàng nhanh chóng chỉ với vài click chuột </h2>
+    <h2 className={classes.title}> Mua hàng nhanh chóng </h2>
+    <p className={classes.name}> Chỉ với một chút thời gian bạn đã có thể chọn cho mình
+    những sản phẩm tốt nhất từ chúng tôi </p>
+    <div className={classes.iconIntroWrapper}>
+      <img src={iconIntro} alt='icon' />
+    </div>
     <div className={classes.steps}>
       <div className='row'>
         <div className='col-md-3'>

@@ -1,14 +1,18 @@
 .wrapper {
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.07);
-  background-color: #ffffff;
+  background-color: #fff;
   margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(111,111,111,.5);
+  position: relative;
+  font-family: UTMAvoBold;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 .imageWrapper {
   position: relative;
   text-align: center;
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   .discount {
@@ -32,9 +36,15 @@
 
 .productInfo {
   padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #000000;
+  text-transform: uppercase;
+  z-index: 2;
   .newAmount {
     font-size: 15px;
-    color: #242424;
+    color: #33a948;
     font-weight: 500;
     padding: 0;
     text-align: left;
@@ -42,10 +52,19 @@
   
   .oldAmount {
     font-size: 11px;
-    color: #a2a2a2;
     text-decoration: line-through;
     text-align: left;
     font-weight: 300;
     margin-left: 8px;
   }
+}
+
+.background {
+  position: absolute;
+  background-color: #ffffff;
+  bottom: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 1;
+  opacity: 0.7;
 }

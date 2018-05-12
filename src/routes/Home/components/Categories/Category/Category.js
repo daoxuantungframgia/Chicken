@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import classes from './Category.scss'
 import { navigateTo } from '../../../../../utils/routing'
 
-const navigateToProductsList = (active) => () => {
-  navigateTo(`products?active=${active}`)
+const navigateToProductsList = (category) => () => {
+  navigateTo(`products?category=${category.id}`)
 }
 
 const Category = ({ category }) => (
-  <div className={classes.cateogryItem} onClick={navigateToProductsList(category.active)}>
+  <div className={classes.cateogryItem} onClick={navigateToProductsList(category)}>
     <div className={classes.imgaeWrapper}>
       <img src={category.image} alt='img' />
     </div>

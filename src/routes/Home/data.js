@@ -33,6 +33,7 @@ export const categories = [
 
 export const data1 = [
   {
+    id: 1,
     image: categoryImage1,
     reducePercentage: 20,
     name: 'Gà mía tươi sạch',
@@ -40,6 +41,7 @@ export const data1 = [
     oldAmount: '120,000',
   },
   {
+    id: 2,
     image: categoryImage1,
     reducePercentage: 20,
     name: 'Gà mía tươi sạch',
@@ -47,6 +49,7 @@ export const data1 = [
     oldAmount: '120,000',
   },
   {
+    id: 3,
     image: categoryImage1,
     reducePercentage: 20,
     name: 'Gà mía tươi sạch',
@@ -54,6 +57,7 @@ export const data1 = [
     oldAmount: '120,000',
   },
   {
+    id: 4,
     image: categoryImage1,
     reducePercentage: 20,
     name: 'Gà mía tươi sạch',
@@ -61,6 +65,7 @@ export const data1 = [
     oldAmount: '120,000',
   },
   {
+    id: 5,
     image: categoryImage1,
     reducePercentage: 20,
     name: 'Gà mía tươi sạch',

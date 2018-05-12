@@ -1,0 +1,23 @@
+.item {
+  padding: 0 10px;
+}
+
+:global {
+  .slick-next {
+    right: 25px;
+    width: 40px;
+    height: 40px;
+    &:before {
+      font-size: 40px;
+    }
+  }
+  .slick-prev {
+    left: 25px;
+    width: 40px;
+    height: 40px;
+    z-index: 99;
+    &:before {
+      font-size: 40px;
+    }
+  }
+}
