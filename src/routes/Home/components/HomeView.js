@@ -1,5 +1,6 @@
 import React from 'react'
 import scrollToComponent from 'react-scroll-to-component'
+import PropTypes from 'prop-types'
 import Menu from './Menu'
 import Intro from './Intro'
 import Categories from './Categories'
@@ -12,10 +13,14 @@ export default class HomeView extends React.Component {
   state = {
     active: '',
   }
-
   componentDidMount () {
     window.addEventListener('scroll', this.handleScroll)
-    this.handleScroll()
+    const active = this.props.location.query.active
+    if (active) {
+      this.scrollTo(active)()
+    } else {
+      this.handleScroll()
+    }
   }
 
   componentWillUnmount () {
@@ -91,4 +96,8 @@ export default class HomeView extends React.Component {
       </div>
     )
   }
+}
+
+HomeView.propTypes = {
+  location: PropTypes.object
 }
