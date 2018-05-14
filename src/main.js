@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import './styles/main.scss'
 
 // Store Initialization
