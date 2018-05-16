@@ -7,13 +7,13 @@ import Categories from './Categories'
 import StepsBuy from './StepsBuy'
 import ListProductsWrapper from '../../ProductsPage/components/ListProductsWrapper'
 import classes from './HomeView.scss'
-import { data1, categories } from '../data'
 
 export default class HomeView extends React.Component {
   state = {
     active: '',
   }
   componentDidMount () {
+    this.props.initialHomePage()
     window.addEventListener('scroll', this.handleScroll)
     const active = this.props.location.query.active
     if (active) {
@@ -63,6 +63,7 @@ export default class HomeView extends React.Component {
 
   render () {
     const { active } = this.state
+    const { categories, hotDeals } = this.props
     return (
       <div className={classes.container}>
         <Menu scrollTo={this.scrollTo} active={active} />
@@ -70,23 +71,17 @@ export default class HomeView extends React.Component {
           <Intro />
         </div>
         <div ref={(chicken) => { this.chicken = chicken }}>
-          <Categories title='Thịt gà sạch' categories={categories} />
+          <Categories title='Thịt gà sạch' categories={categories && categories.ga_thit} />
         </div>
         <div ref={(age) => { this.age = age }}>
-          <Categories title='Trứng gà sạch' categories={categories} />
+          <Categories title='Trứng gà sạch' categories={categories && categories.trung_ga} />
         </div>
         <div ref={(breed) => { this.breed = breed }}>
-          <Categories title='Gà Giống' categories={categories} />
+          <Categories title='Gà Giống' categories={categories && categories.ga_giong} />
         </div>
         <div>
           <ListProductsWrapper title='Các sản phẩm bán chạy'
-            products={data1}
-            isSlider
-          />
-        </div>
-        <div >
-          <ListProductsWrapper title='Hot Deal'
-            products={data1}
+            products={hotDeals}
             isSlider
           />
         </div>
@@ -99,5 +94,8 @@ export default class HomeView extends React.Component {
 }
 
 HomeView.propTypes = {
-  location: PropTypes.object
+  location: PropTypes.object,
+  initialHomePage: PropTypes.func,
+  categories: PropTypes.object,
+  hotDeals: PropTypes.array,
 }

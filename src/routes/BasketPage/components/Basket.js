@@ -29,7 +29,7 @@ const Basket = () => (
       </div>
     </div>
     <div className={classes.relativeProducts}>
-      <ListProductsWrapper products={data1} title='Các sản phẩm liên quan' />
+      <ListProductsWrapper products={data1} title='Các sản phẩm bán chạy nhất' />
     </div>
   </div>
 )

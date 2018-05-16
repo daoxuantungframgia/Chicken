@@ -12,9 +12,9 @@ const Categories = ({ title, categories }) => (
     </div>
     <div className={classes.categories}>
       <div className='row'>
-        { categories.map((category) => (
-          <div className='col-xs-6 col-md-4' key={category.id}>
-            <Category key={category.id} category={category} />
+        { categories && categories.map((category) => (
+          <div className='col-xs-6 col-md-4' key={category.catetypeid}>
+            <Category key={category.catetypeid} category={category} />
           </div>
         )) }
       </div>

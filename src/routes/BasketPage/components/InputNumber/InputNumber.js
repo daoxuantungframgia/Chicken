@@ -5,7 +5,11 @@ import classes from './InputNumber.scss'
 const InputNumber = ({ value, changeValue }) => (
   <div className={classes.wrapper}>
     <button onClick={changeValue(value + 1)} className={classes.increase}> + </button>
-    <input type='number' onChange={changeValue()} value={value} className={classes.input} />
+    <input type='number'
+      onChange={(event) => { changeValue(+event.target.value) }}
+      value={value}
+      className={classes.input}
+    />
     <button onClick={changeValue(value - 1)} className={classes.decrease}> - </button>
   </div>
 )

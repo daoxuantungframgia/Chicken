@@ -1,6 +1,6 @@
-import ProductDetail from './components/ProductDetail'
+import ProductDetail from './container/ProductDetailContainer'
 
 export default {
-  path: 'products/:id',
+  path: 'products/:productId/:promotionId/:categoryId',
   component: ProductDetail
 }

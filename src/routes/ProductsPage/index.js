@@ -1,6 +1,6 @@
-import Products from './components/Products'
+import ProductsContainer from './container/ProductsContainer'
 
 export default {
   path: 'products',
-  component: Products,
+  component: ProductsContainer,
 }

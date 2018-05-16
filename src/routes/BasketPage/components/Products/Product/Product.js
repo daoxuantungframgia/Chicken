@@ -14,7 +14,7 @@ const Product = ({ product }) => (
       <div className='col-xs-8 col-md-9'>
         <div className='row'>
           <div className='col-xs-12 col-md-4'>
-            <p> {product.name} </p>
+            <p> {product.productName} </p>
           </div>
           <div className='col-xs-12 col-md-4'>
             <div >
@@ -22,9 +22,9 @@ const Product = ({ product }) => (
             </div>
           </div>
           <div className='col-xs-12 col-md-4'>
-            <p className={classes.newAmount}> { product.newAmount } </p>
-            <p className={classes.oldAmount}> { product.oldAmount } </p>
-            <p className={classes.discount}> - { product.reducePercentage }% </p>
+            <p className={classes.newAmount}> { product.salePrice } </p>
+            <p className={classes.oldAmount}> { product.originalPrice } </p>
+            <p className={classes.discount}> - { product.promValue }% </p>
           </div>
         </div>
       </div>

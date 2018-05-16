@@ -17,7 +17,7 @@ const SliderProducts = ({ products }) => (
     <Slider {...sliderSettings}>
       {
         products && products.map((product) => (
-          <div key={product.id} data-index={product.id} className={classes.item}>
+          <div key={product.productId} data-index={product.productId} className={classes.item}>
             <Product product={product} />
           </div>
         ))

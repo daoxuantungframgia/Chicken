@@ -5,7 +5,7 @@ import classes from './Products.scss'
 
 const Products = ({ products }) => (
   <div className={classes.wrapper}>
-    { products.map((product) => <Product key={product.id} product={product} />) }
+    { products.map((product) => <Product key={product.productId} product={product} />) }
   </div>
 )
 
