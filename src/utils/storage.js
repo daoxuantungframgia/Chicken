@@ -19,6 +19,11 @@ export const getBaskets = () => {
   return getData('baskets')
 }
 
+export const getNumberBaskets = () => {
+  const baskets = getBaskets()
+  return baskets ? baskets.length : 0
+}
+
 export const getBasketInfo = () => {
   const products = getBaskets()
   let totalOriginPrice = 0
