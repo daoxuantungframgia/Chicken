@@ -1,39 +1,47 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classes from './Product.scss'
 import InputNumber from '../../InputNumber'
+import noImage from '../../../../../assets/no-image.jpg'
 
-const Product = ({ product }) => (
-  <div className={classes.productWrapper}>
-    <div className='row'>
-      <div className='col-xs-4 col-md-3'>
-        <div className={classes.imageWrapper}>
-          <img src={product.image} alt='img' />
-        </div>
-      </div>
-      <div className='col-xs-8 col-md-9'>
+export default class Product extends Component {
+  changeQuantity = (quantity) => () => {
+    this.props.changeProduct({ ...this.props.product, quantity })
+  }
+  render () {
+    const { product } = this.props
+    return (
+      <div className={classes.productWrapper}>
         <div className='row'>
-          <div className='col-xs-12 col-md-4'>
-            <p> {product.productName} </p>
-          </div>
-          <div className='col-xs-12 col-md-4'>
-            <div >
-              <InputNumber value={1} changeValue={() => {}} />
+          <div className='col-xs-4 col-md-3'>
+            <div className={classes.imageWrapper}>
+              <img src={product.image || noImage} alt='img' />
             </div>
           </div>
-          <div className='col-xs-12 col-md-4'>
-            <p className={classes.newAmount}> { product.salePrice } </p>
-            <p className={classes.oldAmount}> { product.originalPrice } </p>
-            <p className={classes.discount}> - { product.promValue }% </p>
+          <div className='col-xs-8 col-md-9'>
+            <div className='row'>
+              <div className='col-xs-12 col-md-4'>
+                <p> {product.productName} </p>
+              </div>
+              <div className='col-xs-12 col-md-4'>
+                <div >
+                  <InputNumber value={product.quantity} changeValue={this.changeQuantity} />
+                </div>
+              </div>
+              <div className='col-xs-12 col-md-4'>
+                <p className={classes.newAmount}> { product.salePrice } </p>
+                <p className={classes.oldAmount}> { product.originalPrice } </p>
+                <p className={classes.discount}> - { product.promValue }% </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-)
-
-Product.propTypes = {
-  product: PropTypes.object
+    )
+  }
 }
 
-export default Product
+Product.propTypes = {
+  product: PropTypes.object,
+  changeProduct: PropTypes.func
+}

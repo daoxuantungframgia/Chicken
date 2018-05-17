@@ -6,7 +6,7 @@ const NOTIFICATION = 'NOTIFICATION'
 
 const instance = axios.create({
   baseURL: 'http://localhost:8888/ServeBackend',
-  timeout: 10000,
+  timeout: 15000,
 })
 
 const setLoading = (loading) => (dispatch) => {

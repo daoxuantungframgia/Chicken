@@ -7,17 +7,17 @@ const BasketInfo = ({ basket }) => (
     <div className={classes.amount}>
       <div className={classes.amountRow}>
         <span> giá tạm tính: </span>
-        <span className={classes.right}> { basket.totalOldAmount } </span>
+        <span className={classes.right}> { basket.totalOriginPrice } </span>
       </div>
       <div className={classes.amountRow}>
         <span> giảm giá: </span>
-        <span className={classes.right}> { basket.totalDiscountAmount } </span>
+        <span className={classes.right}> { basket.totalDiscount } </span>
       </div>
     </div>
     <div className={classes.action}>
       <div className={classes.amountRow}>
         <span> tổng thanh toán: </span>
-        <span className={classes.right}> { basket.totalNewAmount } </span>
+        <span className={classes.right}> { basket.totalSalePrice } </span>
       </div>
       <button className={classes.btnPayment}> Thanh Toán </button>
     </div>

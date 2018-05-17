@@ -26,7 +26,8 @@ export default class ProductDetail extends Component {
 
   addToBasket = () => {
     const { product } = this.props
-    addToBasket(product)
+    const { number } = this.state
+    addToBasket({ ...product, quantity: number })
     navigateTo('/basket')
   }
 

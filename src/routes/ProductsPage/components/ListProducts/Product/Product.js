@@ -6,7 +6,7 @@ import { formatStringToNumber } from '../../../../../utils/utils'
 import noImage from '../../../../../assets/no-image.jpg'
 
 const navigateToProductDetail = (product) => () => {
-  navigateTo(`/products/${product.productId}/${product.promId}/${product.cateTypeId}`)
+  navigateTo(`/products/${product.productId}/${product.promId || 0}/${product.cateTypeId}`)
 }
 
 const Product = ({ product }) => (

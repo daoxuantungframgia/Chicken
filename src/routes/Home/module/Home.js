@@ -16,7 +16,7 @@ const getAllCategories = () => (dispatch) => {
   })
 }
 
-const getHotDeal = () => (dispatch) => {
+export const getHotDeals = () => (dispatch) => {
   API.get({
     url: '/api/homepage/hotdeal'
   }).then(response => {
@@ -31,7 +31,7 @@ const getHotDeal = () => (dispatch) => {
 
 export const initialHomePage = () => (dispatch) => {
   dispatch(getAllCategories())
-  dispatch(getHotDeal())
+  dispatch(getHotDeals())
 }
 
 const INITIAL_STATE = {
