@@ -6,7 +6,7 @@ const ListProducts = ({ products }) => (
   <div>
     <div className='row'>
       {products && products.map((product) => (
-        <div className='col-xs-6 col-md-4' data-index={product.id} key={product.productId}>
+        <div className='col-xs-12 col-sm-6 col-md-4' data-index={product.id} key={product.productId}>
           <Product product={product} key={product.productId} />
         </div>
       ))}

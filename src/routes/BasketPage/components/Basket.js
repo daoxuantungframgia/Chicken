@@ -42,7 +42,10 @@ export default class Basket extends Component {
           </div>
         </div>
         <div className={classes.relativeProducts}>
-          <ListProductsWrapper products={hotDeals} title='Các sản phẩm bán chạy' />
+          <ListProductsWrapper products={hotDeals}
+            title='Các sản phẩm bán chạy'
+            isSlider
+          />
         </div>
       </div>
     )

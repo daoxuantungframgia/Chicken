@@ -25,6 +25,10 @@
   margin-bottom: 20px;
   height: 340px;
   padding: 15px;
+  @media (max-width: 767px) {
+    height: auto;
+    padding: 0;
+  }
   .icon {
     img {
       width: 90px;

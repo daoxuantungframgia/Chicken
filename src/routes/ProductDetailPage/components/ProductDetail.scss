@@ -3,6 +3,10 @@
   padding-bottom: 85px;
   .info {
     .imageWrapper {
+      @media (max-width: 767px) {
+        text-align: center;
+        margin-bottom: 20px;
+      }
       img {
         max-width: 100%;
       }
