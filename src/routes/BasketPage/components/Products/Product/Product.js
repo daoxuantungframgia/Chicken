@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classes from './Product.scss'
 import InputNumber from '../../InputNumber'
 import noImage from '../../../../../assets/no-image.jpg'
+import { formatStringToNumber } from '../../../../../utils/utils'
 
 export default class Product extends Component {
   changeQuantity = (quantity) => () => {
@@ -29,8 +30,8 @@ export default class Product extends Component {
                 </div>
               </div>
               <div className='col-xs-12 col-md-4'>
-                <p className={classes.newAmount}> { product.salePrice } </p>
-                <p className={classes.oldAmount}> { product.originalPrice } </p>
+                <p className={classes.newAmount}> { formatStringToNumber(product.salePrice) } </p>
+                <p className={classes.oldAmount}> { formatStringToNumber(product.originalPrice) } </p>
                 <p className={classes.discount}> - { product.promValue }% </p>
               </div>
             </div>

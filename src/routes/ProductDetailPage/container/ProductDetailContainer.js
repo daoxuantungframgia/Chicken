@@ -4,7 +4,7 @@ import { initialProductDetailPage } from '../module/ProductDetail'
 
 const mapStateToProps = (state) => ({
   product: state.productDetail.product,
-  relativeProducts: state.products.products
+  relativeProducts: state.productDetail.relativeProducts
 })
 
 const mapDispatchToProps = {

@@ -5,6 +5,7 @@ import ListProductsWrapper from '../../ProductsPage/components/ListProductsWrapp
 import InputNumber from '../../BasketPage/components/InputNumber'
 import { navigateTo } from '../../../utils/routing'
 import { addToBasket } from '../../../utils/storage'
+import { formatStringToNumber } from '../../../utils/utils'
 import Menu from '../../Home/components/Menu'
 import noImage from '../../../assets/no-image.jpg'
 import Promotions from './Promotions'
@@ -16,6 +17,12 @@ export default class ProductDetail extends Component {
 
   componentDidMount () {
     this.props.initialProductDetailPage(this.props.params)
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (this.props.params !== nextProps.params) {
+      this.props.initialProductDetailPage(nextProps.params)
+    }
   }
 
   changeValue = (number) => () => {
@@ -47,8 +54,15 @@ export default class ProductDetail extends Component {
             <div className='col-xs-12 col-md-8'>
               <p className={classes.name}> {product.productName} </p>
               <div className={classes.amount}>
-                <span className={classes.newAmount}> {product.salePrice} </span>
-                <span className={classes.oldAmount}> {product.originalPrice} </span>
+                <p>
+                  giá bán: <span className={classes.newAmount}> {formatStringToNumber(product.salePrice)} </span>
+                </p>
+                <p>
+                  giá gốc: <span className={classes.oldAmount}> {formatStringToNumber(product.originalPrice)} </span>
+                </p>
+                <p>
+                  giảm giá: <span className={classes.discount}> {product.promValue}% </span>
+                </p>
               </div>
               <p className={classes.titleDescription}> Mô tả sản phẩm </p>
               <p className={classes.description} > {product.description} </p>

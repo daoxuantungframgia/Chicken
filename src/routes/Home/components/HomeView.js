@@ -70,6 +70,12 @@ export default class HomeView extends React.Component {
         <div ref={(introWe) => { this.introWe = introWe }}>
           <Intro />
         </div>
+        <div>
+          <ListProductsWrapper title='Các sản phẩm bán chạy'
+            products={hotDeals}
+            isSlider
+          />
+        </div>
         <div ref={(chicken) => { this.chicken = chicken }}>
           <Categories title='Thịt gà sạch' categories={categories && categories.ga_thit} />
         </div>
@@ -78,12 +84,6 @@ export default class HomeView extends React.Component {
         </div>
         <div ref={(breed) => { this.breed = breed }}>
           <Categories title='Gà Giống' categories={categories && categories.ga_giong} />
-        </div>
-        <div>
-          <ListProductsWrapper title='Các sản phẩm bán chạy'
-            products={hotDeals}
-            isSlider
-          />
         </div>
         <div ref={(stepsBuy) => { this.stepsBuy = stepsBuy }}>
           <StepsBuy />

@@ -13,7 +13,7 @@ const Categories = ({ title, categories }) => (
     <div className={classes.categories}>
       <div className='row'>
         { categories && categories.map((category) => (
-          <div className='col-xs-12 col-sm-6 col-md-4' key={category.catetypeid}>
+          <div className='col-xs-12 col-sm-6 col-md-3' key={category.catetypeid}>
             <Category key={category.catetypeid} category={category} />
           </div>
         )) }
