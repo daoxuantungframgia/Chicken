@@ -42,4 +42,54 @@
       transform: translate(-50%, -50%);
     }
   }
+
+  .callWrapper {
+    width: 100px;
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%);
+    left: 45px;
+    z-index: 103;
+    img {
+      width: 50px;
+    }
+    .listPhone {
+      display: none;
+      position: absolute;
+      z-index: 999;
+      top: 0;
+      left: 60px;
+      width: 250px;
+      background-color: #ffffff;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      .listPhoneItem {
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+      }
+      .phoneIcon {
+        width: 30px;
+        float: left
+      }
+  
+      .phone {
+        overflow: auto;
+        padding-left: 15px;
+        p {
+          margin: 0;
+          color: #000000;
+        }
+        .phoneNumber {
+          color: #4e5f70;
+        }
+      }
+    }
+
+    &:hover {
+      .listPhone {
+        display: block;
+      }
+    }
+  }
 }

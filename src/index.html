@@ -13,8 +13,105 @@
   <!-- bootstrap -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+  <!-- custom style facebook chat -->
+  <style type="text/css">
+    #hisella-facebook {
+      width: 300px;
+    }
+    .hisella-messages {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      z-index: 999999;
+    }
+    .hisella-messages-outer {
+      position: relative;
+    }
+    #hisella-minimize {
+      background: #3b5998;
+      font-size: 14px;
+      color: #fff;
+      padding: 7px 10px;
+      position: absolute; 
+      bottom: 300px;
+      right: 0px;
+      border: 1px solid #E9EAED;
+      cursor: pointer;
+      width: 300px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .addOrMinus {
+      float: right;
+    }
+    @media screen and (max-width:768px){
+      #hisella-facebook {
+        opacity:0;
+      }
+      .hisella-messages {
+        bottom: -300px;
+        right: 0px;
+      }
+    }
+  </style>
+  <!-- facebook root -->
+  <div id='fb-root'></div>
+  <!-- script load facebook -->
+  <script>
+    (function($) { 
+      $(document).ready(function(){
+        $( '#hisella-minimize' ).click( function() {
+          if( $( '#hisella-facebook' ).css( 'opacity' ) == 0 ) {
+            $( '#hisella-facebook' ).css( 'opacity', 1 );
+            $( '.hisella-messages' )
+              .animate( { right: '15px' } )
+              .animate( { bottom: '15px' } );
+            $('#hisella-minimize').animate({ bottom: '300px' })
+            $('.addOrMinus').html('&minus;')
+          } else {
+            $( '.hisella-messages' )
+              .animate( { bottom: '-300px' } )
+              .animate( { right: '15px' },
+                400, 
+                function(){
+                  $( '#hisella-facebook' ).css( 'opacity', 0 )
+                });
+            $('#hisella-minimize').animate({ bottom: '310px' })
+            $('.addOrMinus').html('&#43;')
+          } 
+        }) 
+      });
+    })(jQuery);
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- facebook chat -->
+  <div class="hisella-messages">
+    <div class="hisella-messages-outer">
+      <div id="hisella-minimize">Hỗ trợ trực tuyến <span class='addOrMinus'> &minus; </span></div>
+      <div id="hisella-facebook"
+        class='fb-page'
+        data-adapt-container-width='true'
+        data-height='300'
+        data-hide-cover='false'
+        data-href='https://www.facebook.com/Trang-Trại-Gà-Sạch-321870715008884'
+        data-show-facepile='true'
+        data-show-posts='false'
+        data-small-header='false'
+        data-tabs='messages'
+      >
+      </div>
+    </div>
+  </div>
   <div id="root" style="min-height: 100%"></div>
 </body>
 </html>
