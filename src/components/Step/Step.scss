@@ -1,0 +1,46 @@
+.step {
+  list-style-type: none;
+  padding: 15px 0;
+  .number {
+    display: inline-block;
+    width: calc(100%/3);
+    text-align: center;
+    position: relative;
+    .text {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 15px;
+      background-color: rgb(248, 248, 248);
+      position: relative;
+      z-index: 1;
+    }
+
+    .line {
+      width: 100%;
+      height: 5px;
+      display: inline-block;
+      position: absolute;
+      background-color: #bebebe;
+      top: 50%;
+      transform: translateY(-50%);
+      right: calc(50% + 20px);
+      z-index: 0;
+    }
+  }
+
+  .active {
+    .text {
+      background-color: #33a948;
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .line {
+      background-color: #33a948;
+    }
+  }
+}

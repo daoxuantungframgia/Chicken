@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Step from 'components/Step'
 import classes from './SelectAddress.scss'
 import Menu from '../../Home/components/Menu'
 import SelectAddressForm from './SelectAddressForm'
@@ -7,6 +8,7 @@ import SelectAddressForm from './SelectAddressForm'
 const SelectAddress = ({ submitAddress }) => (
   <div className={classes.wrapper}>
     <Menu active='1' />
+    <Step step={2} />
     <div className={classes.selectAddressContent}>
       <p className={classes.title}> Nhập địa chỉ nhận hàng </p>
       <SelectAddressForm submitAddress={submitAddress} />

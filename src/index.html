@@ -36,7 +36,7 @@
       color: #fff;
       padding: 7px 10px;
       position: absolute; 
-      bottom: 300px;
+      bottom: 0;
       right: 0px;
       border: 1px solid #E9EAED;
       cursor: pointer;
@@ -62,16 +62,28 @@
   <div id='fb-root'></div>
   <!-- script load facebook -->
   <script>
-    (function($) { 
+    (function($) {
+      let firstLoadFacebook = true
       $(document).ready(function(){
         $( '#hisella-minimize' ).click( function() {
-          if( $( '#hisella-facebook' ).css( 'opacity' ) == 0 ) {
+          if (firstLoadFacebook) {
+            (function(d, s, id) {
+              firstLoadFacebook = false
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+          }
+          if( $( '#hisella-facebook' ).attr( 'data-showing' ) == 'false' ) {
             $( '#hisella-facebook' ).css( 'opacity', 1 );
             $( '.hisella-messages' )
               .animate( { right: '15px' } )
               .animate( { bottom: '15px' } );
             $('#hisella-minimize').animate({ bottom: '300px' })
             $('.addOrMinus').html('&minus;')
+            $( '#hisella-facebook' ).attr( 'data-showing', 'true')
           } else {
             $( '.hisella-messages' )
               .animate( { bottom: '-300px' } )
@@ -82,22 +94,16 @@
                 });
             $('#hisella-minimize').animate({ bottom: '310px' })
             $('.addOrMinus').html('&#43;')
+            $( '#hisella-facebook' ).attr( 'data-showing', 'false')
           } 
         }) 
       });
     })(jQuery);
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
   </script>
   <!-- facebook chat -->
   <div class="hisella-messages">
     <div class="hisella-messages-outer">
-      <div id="hisella-minimize">Hỗ trợ trực tuyến <span class='addOrMinus'> &minus; </span></div>
+      <div id="hisella-minimize">Hỗ trợ trực tuyến <span class='addOrMinus'> &#43; </span></div>
       <div id="hisella-facebook"
         class='fb-page'
         data-adapt-container-width='true'
@@ -108,6 +114,7 @@
         data-show-posts='false'
         data-small-header='false'
         data-tabs='messages'
+        data-showing='false'
       >
       </div>
     </div>
