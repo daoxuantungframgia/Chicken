@@ -1,0 +1,19 @@
+.wrapper {
+  padding: 100px 0 85px 0;
+  .selectAddressContent {
+    max-width: 787px;
+    height: 500px;
+    width: 100%;
+    background-color: #ffffff;
+    margin: 0 auto;
+    @media (max-width: 767px) {
+      height: auto;
+    }
+  }
+  .title {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}

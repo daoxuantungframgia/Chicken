@@ -5,6 +5,10 @@ import CounterRoute from './Counter'
 import ProductRoute from './ProductsPage'
 import BasketRoute from './BasketPage'
 import ProductDetailRoute from './ProductDetailPage'
+import LoginRoute from './Login'
+import RegisteRoute from './Register'
+import SelectAddressRoute from './SelectAddress'
+import OrderCompleteRoute from './OrderComplete'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -18,6 +22,10 @@ export const createRoutes = (store) => ({
     ProductRoute,
     BasketRoute,
     ProductDetailRoute,
+    LoginRoute,
+    RegisteRoute,
+    SelectAddressRoute,
+    OrderCompleteRoute
   ]
 })
 

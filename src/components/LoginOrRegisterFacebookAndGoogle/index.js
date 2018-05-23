@@ -1,0 +1,3 @@
+import LoginOrRegisterFacebookAndGoogle from './LoginOrRegisterFacebookAndGoogle'
+
+export default LoginOrRegisterFacebookAndGoogle

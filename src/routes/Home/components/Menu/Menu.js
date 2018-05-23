@@ -15,6 +15,10 @@ const navigateToBasket = () => {
   navigateTo('/basket')
 }
 
+const navigateToLogin = () => {
+  navigateTo('/login')
+}
+
 const scrollOrNavigate = ({ scrollTo, active, closeMenu }) => () => {
   if (scrollTo) {
     scrollTo(active)(0)
@@ -111,7 +115,7 @@ const Menu = ({ scrollTo, active }) => {
           />
           {numberBaskets ? <span className={classes.numberProduct}> {numberBaskets} </span> : ''}
         </div>
-        <button className={classes.btnLogin} > Đăng Nhập </button>
+        <button className={classes.btnLogin} onClick={navigateToLogin}> Đăng Nhập </button>
       </div>
     </div>
   )
