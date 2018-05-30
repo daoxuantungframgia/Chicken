@@ -4,7 +4,7 @@ const GET_PRODUCTS = 'GET_PRODUCTS'
 
 export const getProducts = (categoryId) => (dispatch) => {
   API.get({
-    url: `/api/homepage/product/${categoryId}`
+    url: `/api/public/product/${categoryId}`
   }).then((response) => {
     if (response) {
       dispatch({

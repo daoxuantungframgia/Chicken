@@ -7,20 +7,25 @@ import LoginForm from './LoginForm'
 import MenuLoginOrRegister from '../../../components/MenuLoginOrRegister'
 import LoginOrRegisterFacebookAndGoogle from '../../../components/LoginOrRegisterFacebookAndGoogle'
 
-const Login = ({ submitLogin }) => (
+const Login = ({ submitLogin, loginSocialFailure, loginSocialSuccess }) => (
   <div className={classes.wrapper}>
     <Menu active='1' />
     <Step step={1} />
     <div className={classes.loginContent}>
       <MenuLoginOrRegister active='login' />
-      <LoginOrRegisterFacebookAndGoogle label='Đăng nhập bằng tài khoản: ' />
+      <LoginOrRegisterFacebookAndGoogle label='Đăng nhập bằng tài khoản: '
+        onLoginFailure={loginSocialFailure}
+        onLoginSuccess={loginSocialSuccess}
+      />
       <LoginForm submitLogin={submitLogin} />
     </div>
   </div>
 )
 
 Login.propTypes = {
-  submitLogin: PropTypes.func
+  submitLogin: PropTypes.func,
+  loginSocialSuccess: PropTypes.func,
+  loginSocialFailure: PropTypes.func
 }
 
 export default Login

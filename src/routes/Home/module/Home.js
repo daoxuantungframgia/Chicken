@@ -5,7 +5,7 @@ const GET_HOT_DEAL = 'GET_HOT_DEAL'
 
 const getAllCategories = () => (dispatch) => {
   API.get({
-    url: '/api/homepage/categoryType',
+    url: '/api/public/categoryType',
   }).then(response => {
     if (response) {
       dispatch({
@@ -18,7 +18,7 @@ const getAllCategories = () => (dispatch) => {
 
 export const getHotDeals = () => (dispatch) => {
   API.get({
-    url: '/api/homepage/hotdeal'
+    url: '/api/public/hotdeal'
   }).then(response => {
     if (response) {
       dispatch({

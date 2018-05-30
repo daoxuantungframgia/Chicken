@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
-import { submitRegister } from '../module/Register'
+import { submitRegister, loginSocialFailure, loginSocialSuccess } from '../module/Register'
 import Register from '../components/Register'
 
 const mapDispatchToProps = {
-  submitRegister
+  submitRegister,
+  loginSocialSuccess,
+  loginSocialFailure
 }
 
 export default connect(null, mapDispatchToProps)(Register)

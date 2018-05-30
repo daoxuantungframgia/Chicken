@@ -3,22 +3,23 @@ import PropTypes from 'prop-types'
 import { Form, Field, reduxForm } from 'redux-form'
 import classes from './RegisterForm.scss'
 import TextField from '../../../../components/TextField'
+import { validateRegisterForm } from './validate/RegisterFormValidate'
 
 const RegisterForm = ({ handleSubmit, submitRegister }) => (
   <Form onSubmit={handleSubmit(submitRegister)} className={classes.registerForm}>
     <div className='row'>
       <div className='col-xs-12 col-md-6'>
-        <Field name='username'
+        <Field name='email'
           component={TextField}
           type='text'
-          label='Tài Khoản Đăng Nhập là số điện thoại hoặc email'
+          label='email'
         />
         <Field name='password'
           component={TextField}
           type='password'
           label='Mật Khẩu'
         />
-        <Field name='repeatPassword'
+        <Field name='confirmPassword'
           component={TextField}
           type='password'
           label='Nhập lại mật khẩu'
@@ -30,15 +31,10 @@ const RegisterForm = ({ handleSubmit, submitRegister }) => (
           type='text'
           label='Họ và tên'
         />
-        <Field name='phone'
+        <Field name='phoneNumber'
           component={TextField}
           type='number'
           label='Số điện thoại'
-        />
-        <Field name='address'
-          component={TextField}
-          type='text'
-          label='Địa chỉ'
         />
       </div>
     </div>
@@ -52,5 +48,6 @@ RegisterForm.propTypes = {
 }
 
 export default reduxForm({
-  form: 'registerForm'
+  form: 'registerForm',
+  validate: validateRegisterForm,
 })(RegisterForm)

@@ -36,7 +36,7 @@
       color: #fff;
       padding: 7px 10px;
       position: absolute; 
-      bottom: 0;
+      bottom: 300px;
       right: 0px;
       border: 1px solid #E9EAED;
       cursor: pointer;
@@ -63,19 +63,20 @@
   <!-- script load facebook -->
   <script>
     (function($) {
-      let firstLoadFacebook = true
+      // let firstLoadFacebook = true
       $(document).ready(function(){
         $( '#hisella-minimize' ).click( function() {
-          if (firstLoadFacebook) {
-            (function(d, s, id) {
-              firstLoadFacebook = false
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-          }
+          // if (firstLoadFacebook) {
+          //   debugger;
+          //   (function(d, s, id) {
+          //     firstLoadFacebook = false
+          //     var js, fjs = d.getElementsByTagName(s)[0];
+          //     if (d.getElementById(id)) return;
+          //     js = d.createElement(s); js.id = id;
+          //     js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
+          //     fjs.parentNode.insertBefore(js, fjs);
+          //   }(document, 'script', 'facebook-jssdk'));
+          // }
           if( $( '#hisella-facebook' ).attr( 'data-showing' ) == 'false' ) {
             $( '#hisella-facebook' ).css( 'opacity', 1 );
             $( '.hisella-messages' )
@@ -99,11 +100,12 @@
         }) 
       });
     })(jQuery);
+
   </script>
   <!-- facebook chat -->
   <div class="hisella-messages">
     <div class="hisella-messages-outer">
-      <div id="hisella-minimize">Hỗ trợ trực tuyến <span class='addOrMinus'> &#43; </span></div>
+      <div id="hisella-minimize">Hỗ trợ trực tuyến <span class='addOrMinus'> &minus; </span></div>
       <div id="hisella-facebook"
         class='fb-page'
         data-adapt-container-width='true'
@@ -114,7 +116,7 @@
         data-show-posts='false'
         data-small-header='false'
         data-tabs='messages'
-        data-showing='false'
+        data-showing='true'
       >
       </div>
     </div>

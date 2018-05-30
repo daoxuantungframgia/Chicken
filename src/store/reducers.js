@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form';
 import locationReducer from './location'
 import apiReducers from '../api/api'
 import homeReducer from '../routes/Home/module/Home'
@@ -12,6 +13,7 @@ export const makeRootReducer = (asyncReducers) => {
     home: homeReducer,
     products: productsReducer,
     productDetail: productDetailReducer,
+    form: formReducer,
     ...asyncReducers
   })
 }

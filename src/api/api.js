@@ -31,11 +31,14 @@ const setNotification = ({ notification, time = 3000 }) => (dispatch) => {
 }
 
 const handleError = (error) => (dispatch) => {
+  const errorMessage = error && error.response && error.response.data && error.response.data.devMessage
   const notification = {
     error: { message: 'có lỗi trên hệ thống, vui lòng thử lại' }
   }
   if (error.code === 'ECONNABORTED') {
     notification.error.message = 'yêu cầu của bạn bị hết hạn do hết thời gian'
+  } else if (errorMessage) {
+    notification.error.message = errorMessage
   }
 
   dispatch(setNotification({ notification }))

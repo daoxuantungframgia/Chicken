@@ -5,7 +5,7 @@ const GET_RELATIVE_PRODUCTS = 'GET_RELATIVE_PRODUCTS'
 
 const getProductDetail = ({ productId, promotionId }) => (dispatch) => {
   API.get({
-    url: `/api/homepage/productDetail/${productId}/${promotionId}`
+    url: `/api/public/productDetail/${productId}/${promotionId}`
   }).then(response => {
     if (response) {
       dispatch({
@@ -18,7 +18,7 @@ const getProductDetail = ({ productId, promotionId }) => (dispatch) => {
 
 const getRelativeProducts = ({ categoryId, productId }) => (dispatch) => {
   API.get({
-    url: `/api/homepage/product/${categoryId}`
+    url: `/api/public/product/${categoryId}`
   }).then(response => {
     if (response) {
       const relativeProducts = response.filter(product => product.productId !== +productId)

@@ -12,7 +12,7 @@ const LoginForm = ({ handleSubmit, submitLogin }) => (
       label='Tên Đăng Nhập'
     />
 
-    <Field name='passworld'
+    <Field name='password'
       component={TextField}
       type='password'
       label='Mật Khẩu'
