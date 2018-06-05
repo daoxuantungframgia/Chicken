@@ -26,9 +26,11 @@ export default class ProductDetail extends Component {
   }
 
   changeValue = (number) => () => {
-    this.setState({
-      number
-    })
+    if (number > 0) {
+      this.setState({
+        number
+      })
+    }
   }
 
   addToBasket = () => {

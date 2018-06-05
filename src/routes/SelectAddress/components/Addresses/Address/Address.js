@@ -59,7 +59,7 @@ export default class Address extends Component {
               Sửa
             </button>
             <span className={classNames('glyphicon glyphicon-trash', classes.delete)}
-              onClick={deleteAddress}
+              onClick={this.handleDeleteAddress}
             />
           </div>
         </div>

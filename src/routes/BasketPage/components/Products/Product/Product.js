@@ -7,7 +7,14 @@ import { formatStringToNumber } from '../../../../../utils/utils'
 
 export default class Product extends Component {
   changeQuantity = (quantity) => () => {
-    this.props.changeProduct({ ...this.props.product, quantity })
+    if (quantity > 0) {
+      this.props.changeProduct({ ...this.props.product, quantity })
+    }
+  }
+  removeToBasket = () => {
+    const { product, removeToBasket } = this.props
+
+    removeToBasket(product.productId)
   }
   render () {
     const { product } = this.props
@@ -29,10 +36,15 @@ export default class Product extends Component {
                   <InputNumber value={product.quantity} changeValue={this.changeQuantity} />
                 </div>
               </div>
-              <div className='col-xs-12 col-md-4'>
+              <div className='col-xs-12 col-md-3'>
                 <p className={classes.newAmount}> { formatStringToNumber(product.salePrice) } </p>
                 <p className={classes.oldAmount}> { formatStringToNumber(product.originalPrice) } </p>
                 <p className={classes.discount}> - { product.promValue }% </p>
+              </div>
+              <div className='col-xs-12 col-md-1'>
+                <span className='glyphicon glyphicon-trash'
+                  onClick={this.removeToBasket}
+                />
               </div>
             </div>
           </div>
@@ -44,5 +56,6 @@ export default class Product extends Component {
 
 Product.propTypes = {
   product: PropTypes.object,
-  changeProduct: PropTypes.func
+  changeProduct: PropTypes.func,
+  removeToBasket: PropTypes.func
 }

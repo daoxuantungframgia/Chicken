@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import bootbox from 'bootbox'
 import Products from './Products'
 import BasketInfo from './BasketInfo'
 import ListProductsWrapper from '../../ProductsPage/components/ListProductsWrapper'
 import classes from './Basket.scss'
 import Menu from '../../Home/components/Menu'
 import iconIntro from '../../../assets/icon-gioithieu.png'
-import { getBaskets, getBasketInfo, updateBasket } from '../../../utils/storage'
+import { getBaskets, getBasketInfo, updateBasket, removeToBasket } from '../../../utils/storage'
 
 export default class Basket extends Component {
   componentDidMount () {
@@ -15,6 +16,14 @@ export default class Basket extends Component {
   changeProduct = (product) => {
     updateBasket(product)
     this.forceUpdate()
+  }
+  removeToBasket = (productId) => {
+    bootbox.confirm('Bạn có chắc chắn muốn xoá sản phẩm này khỏi giỏ hàng?', (result) => {
+      if (result) {
+        removeToBasket(productId)
+        this.forceUpdate()
+      }
+    })
   }
   render () {
     const { hotDeals } = this.props
@@ -31,7 +40,10 @@ export default class Basket extends Component {
           <div className='row'>
             <div className='col-xs-12 col-sm-12 col-md-9'>
               <div className={classes.products}>
-                <Products products={baskets} changeProduct={this.changeProduct} />
+                <Products products={baskets}
+                  changeProduct={this.changeProduct}
+                  removeToBasket={this.removeToBasket}
+                />
               </div>
             </div>
             <div className='col-xs-12 col-sm-12 col-md-3'>

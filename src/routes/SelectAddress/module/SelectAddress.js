@@ -51,6 +51,10 @@ export const deleteAddress = (address) => (dispatch) => {
     if (result) {
       API.deleteData({
         url: `/api/private/users/profiles/${address.userProfileId}`
+      }).then((response) => {
+        if (response) {
+          dispatch(getAddresses())
+        }
       })
     }
   })

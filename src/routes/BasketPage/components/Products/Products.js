@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import Product from './Product'
 import classes from './Products.scss'
 
-const Products = ({ products, changeProduct }) => (
+const Products = ({ products, changeProduct, removeToBasket }) => (
   <div className={classes.wrapper}>
     { products && products.map((product) => (
       <Product key={product.productId}
         product={product}
         changeProduct={changeProduct}
+        removeToBasket={removeToBasket}
       />
     )) }
     {
@@ -20,7 +21,8 @@ const Products = ({ products, changeProduct }) => (
 
 Products.propTypes = {
   products: PropTypes.array,
-  changeProduct: PropTypes.func
+  changeProduct: PropTypes.func,
+  removeToBasket: PropTypes.func
 }
 
 export default Products

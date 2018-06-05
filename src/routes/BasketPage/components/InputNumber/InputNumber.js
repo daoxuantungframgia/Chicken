@@ -6,7 +6,7 @@ const InputNumber = ({ value, changeValue }) => (
   <div className={classes.wrapper}>
     <button onClick={changeValue(value + 1)} className={classes.increase}> + </button>
     <input type='number'
-      onChange={(event) => { changeValue(+event.target.value) }}
+      onChange={(event) => { changeValue(+event.target.value)() }}
       value={value}
       className={classes.input}
     />

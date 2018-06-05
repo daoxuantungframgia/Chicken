@@ -112,7 +112,7 @@ const Menu = ({ scrollTo, active }) => {
           <a> Hướng dẫn mua hàng </a>
         </li>
       </ul>
-      <div className={classes.right}>
+      <div className={classNames(classes.right, isLoggedIn() && classes.padTop10)}>
         <div className={classes.basketWrapper}>
           <span className={classNames(classes.basketIcon, 'glyphicon glyphicon-shopping-cart')}
             onClick={navigateToBasket}

@@ -11,6 +11,7 @@ import SelectAddressRoute from './SelectAddress'
 import OrderCompleteRoute from './OrderComplete'
 import ForgotPasswordRoute from './ForgotPassword'
 import ChangeForgotPasswordRoute from './ChangeForgotPassword'
+import ChangePasswordRoute from './ChangePassword'
 
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
@@ -29,7 +30,8 @@ export const createRoutes = (store) => ({
     SelectAddressRoute,
     OrderCompleteRoute,
     ForgotPasswordRoute,
-    ChangeForgotPasswordRoute
+    ChangeForgotPasswordRoute,
+    ChangePasswordRoute
   ]
 })
 

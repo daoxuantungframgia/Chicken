@@ -10,6 +10,10 @@ const logout = () => {
   navigateTo('/login')
 }
 
+const changePassword = () => {
+  navigateTo('/change-password')
+}
+
 const Dropdown = ({ user }) => (
   <div className={classNames(classes.wrapper, 'dropdown')}>
     <span id='dropdownMenu' data-toggle='dropdown' > Chào.
@@ -17,7 +21,8 @@ const Dropdown = ({ user }) => (
       <span className='glyphicon glyphicon-menu-down' />
     </span>
     <ul className={classNames('dropdown-menu', classes.dropdownMenu)} aria-labelledby='dropdownMenu'>
-      <li><a href='#' onClick={logout}>Thoát</a></li>
+      <li className={classes.menuItem}><a href='#' onClick={logout}>Thoát</a></li>
+      <li className={classes.menuItem}><a href='#' onClick={changePassword}>Thay đổi mật khẩu</a></li>
     </ul>
   </div>
 )
