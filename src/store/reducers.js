@@ -5,6 +5,7 @@ import apiReducers from '../api/api'
 import homeReducer from '../routes/Home/module/Home'
 import productsReducer from '../routes/ProductsPage/module/Products'
 import productDetailReducer from '../routes/ProductDetailPage/module/ProductDetail'
+import selectAddressReducer from '../routes/SelectAddress/module/SelectAddress'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
@@ -14,6 +15,7 @@ export const makeRootReducer = (asyncReducers) => {
     products: productsReducer,
     productDetail: productDetailReducer,
     form: formReducer,
+    selectAddress: selectAddressReducer,
     ...asyncReducers
   })
 }

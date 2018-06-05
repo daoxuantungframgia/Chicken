@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import Dropdown from 'components/Dropdown'
+import { isLoggedIn, getUser, setLoginFromBasket } from 'utils/storage'
 import HomeIcon from '../../../../assets/home-icon.png'
 import classes from './Menu.scss'
 import { navigateTo } from '../../../../utils/routing'
@@ -16,6 +18,7 @@ const navigateToBasket = () => {
 }
 
 const navigateToLogin = () => {
+  setLoginFromBasket(false)
   navigateTo('/login')
 }
 
@@ -40,6 +43,7 @@ const showMenuMobile = ({ show }) => () => {
 
 const Menu = ({ scrollTo, active }) => {
   const numberBaskets = getNumberBaskets()
+  const user = getUser()
   return (
     <div className={classNames(classes.menuWrapper, active && classes.bgWhite)}>
       <div className={classes.logo} onClick={navigateToHomePage}>
@@ -115,7 +119,10 @@ const Menu = ({ scrollTo, active }) => {
           />
           {numberBaskets ? <span className={classes.numberProduct}> {numberBaskets} </span> : ''}
         </div>
-        <button className={classes.btnLogin} onClick={navigateToLogin}> Đăng Nhập </button>
+        {isLoggedIn()
+          ? <Dropdown user={user} />
+          : <button className={classes.btnLogin} onClick={navigateToLogin}> Đăng Nhập </button>
+        }
       </div>
     </div>
   )

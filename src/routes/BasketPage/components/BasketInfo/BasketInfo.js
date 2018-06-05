@@ -2,6 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classes from './BasketInfo.scss'
 import { formatStringToNumber } from '../../../../utils/utils'
+import { isLoggedIn, setLoginFromBasket } from 'utils/storage'
+import { navigateTo } from 'utils/routing'
+
+const payment = () => {
+  if (isLoggedIn()) {
+    navigateTo('/select-address')
+  } else {
+    setLoginFromBasket(true)
+    navigateTo('/login')
+  }
+}
 
 const BasketInfo = ({ basket }) => (
   <div className={classes.wrapper}>
@@ -20,7 +31,11 @@ const BasketInfo = ({ basket }) => (
         <span className={classes.title}> tổng thanh toán: </span>
         <span className={classes.right}> { formatStringToNumber(basket.totalSalePrice) } </span>
       </div>
-      <button className={classes.btnPayment}> Thanh Toán </button>
+      <button className={classes.btnPayment}
+        onClick={payment}
+      >
+        Thanh Toán
+      </button>
     </div>
   </div>
 )

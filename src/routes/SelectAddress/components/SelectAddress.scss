@@ -1,10 +1,8 @@
 .wrapper {
   padding: 100px 0 85px 0;
   .selectAddressContent {
-    max-width: 787px;
-    height: 500px;
+    max-width: 1024px;
     width: 100%;
-    background-color: #ffffff;
     margin: 0 auto;
     @media (max-width: 767px) {
       height: auto;
@@ -12,8 +10,40 @@
   }
   .title {
     text-align: center;
-    padding-top: 40px;
-    font-size: 22px;
+    padding: 40px 0;
     font-weight: bold;
+  }
+  .btnWrapper {
+    clear: both;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+  .btnPayment {
+    width: 200px;
+    padding: 14px;
+    color: #fff;
+    background-color: #33a948;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    float: left;
+    @media (max-width: 767px) {
+      width: 140px;
+    }
+  }
+
+  .addNewAddress {
+    width: 200px;
+    padding: 14px;
+    background-color: transparent;
+    border: 1px solid #33a948;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    float: right;
+    @media (max-width: 767px) {
+      width: 140px;
+    }
   }
 }

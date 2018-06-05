@@ -5,10 +5,17 @@ import { navigateTo } from 'utils/routing'
 export function submitRegister (values) {
   return (dispatch) => {
     API.post({
-      url: '/api/public/create/users',
+      url: '/api/public/users/create',
       data: values
     }).then((response) => {
       if (response) {
+        dispatch(API.setNotification({
+          notification: {
+            success: {
+              message: 'Chúc mừng! Bạn đã đăng ký tài khoản thành công'
+            }
+          }
+        }))
         navigateTo('/login')
       }
     })

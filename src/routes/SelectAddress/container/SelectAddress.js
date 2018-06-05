@@ -1,9 +1,17 @@
 import { connect } from 'react-redux'
-import { submitAddress } from '../module/SelectAddress'
+import { getAddresses, selectAddress, updateAddress, deleteAddress } from '../module/SelectAddress'
 import SelectAddress from '../components/SelectAddress'
 
+const mapStateToProps = (state) => ({
+  addresses: state.selectAddress.addresses,
+  selectedAddress: state.selectAddress.selectedAddress
+})
+
 const mapDispatchToProps = {
-  submitAddress
+  getAddresses,
+  selectAddress,
+  updateAddress,
+  deleteAddress
 }
 
-export default connect(null, mapDispatchToProps)(SelectAddress)
+export default connect(mapStateToProps, mapDispatchToProps)(SelectAddress)

@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { store } from '../main'
+import { getUser } from 'utils/storage'
+import { navigateTo } from 'utils/routing'
 
 const LOADING = 'LOADING'
 const NOTIFICATION = 'NOTIFICATION'
@@ -16,7 +18,7 @@ const setLoading = (loading) => (dispatch) => {
   })
 }
 
-const setNotification = ({ notification, time = 3000 }) => (dispatch) => {
+export const setNotification = ({ notification, time = 3000 }) => (dispatch) => {
   dispatch({
     type: NOTIFICATION,
     notification
@@ -39,6 +41,9 @@ const handleError = (error) => (dispatch) => {
     notification.error.message = 'yêu cầu của bạn bị hết hạn do hết thời gian'
   } else if (errorMessage) {
     notification.error.message = errorMessage
+  } else if (error.status === 401) {
+    notification.error.message = 'Bạn cần đăng nhập lại để sử dụng dịch vụ'
+    navigateTo('/login')
   }
 
   dispatch(setNotification({ notification }))
@@ -46,7 +51,8 @@ const handleError = (error) => (dispatch) => {
 
 const sendRequest = ({ url, method, params, data }) => {
   store.dispatch(setLoading(true))
-
+  const user = getUser()
+  const token = user && user.token
   return instance({
     url,
     method,
@@ -54,6 +60,7 @@ const sendRequest = ({ url, method, params, data }) => {
     data,
     headers: {
       'Content-Type': 'application/json',
+      'authorization' : token
     }
   }).then((response) => {
     store.dispatch(setLoading(false))

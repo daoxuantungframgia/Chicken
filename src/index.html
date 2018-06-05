@@ -63,20 +63,8 @@
   <!-- script load facebook -->
   <script>
     (function($) {
-      // let firstLoadFacebook = true
       $(document).ready(function(){
         $( '#hisella-minimize' ).click( function() {
-          // if (firstLoadFacebook) {
-          //   debugger;
-          //   (function(d, s, id) {
-          //     firstLoadFacebook = false
-          //     var js, fjs = d.getElementsByTagName(s)[0];
-          //     if (d.getElementById(id)) return;
-          //     js = d.createElement(s); js.id = id;
-          //     js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
-          //     fjs.parentNode.insertBefore(js, fjs);
-          //   }(document, 'script', 'facebook-jssdk'));
-          // }
           if( $( '#hisella-facebook' ).attr( 'data-showing' ) == 'false' ) {
             $( '#hisella-facebook' ).css( 'opacity', 1 );
             $( '.hisella-messages' )
@@ -99,6 +87,14 @@
           } 
         }) 
       });
+      // (function(d, s, id) {
+      //   firstLoadFacebook = false
+      //   var js, fjs = d.getElementsByTagName(s)[0];
+      //   if (d.getElementById(id)) return;
+      //   js = d.createElement(s); js.id = id;
+      //   js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.0";
+      //   fjs.parentNode.insertBefore(js, fjs);
+      // }(document, 'script', 'facebook-jssdk'));
     })(jQuery);
 
   </script>

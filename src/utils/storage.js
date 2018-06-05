@@ -2,7 +2,7 @@ export const setData = (key, value) => {
   sessionStorage.setItem(key, JSON.stringify(value))
 }
 
-export const getData = (key, value) => {
+export const getData = (key) => {
   const storageValue = sessionStorage.getItem(key)
   return storageValue && JSON.parse(storageValue)
 }
@@ -75,4 +75,25 @@ export const updateBasket = (product) => {
     return oldProduct
   })
   setData('baskets', newProducts)
+}
+
+export const setUser = (user) => {
+  setData('user', user)
+}
+
+export const getUser = () => {
+  return getData('user')
+}
+
+export const isLoginFromBasket = () => {
+  return getData('loginFromBasket')
+}
+
+export const setLoginFromBasket = (isLoginFromBasket) => {
+  setData('loginFromBasket', isLoginFromBasket)
+}
+
+export const isLoggedIn = () => {
+  const user = getUser()
+  return !!(user && user.token)
 }
